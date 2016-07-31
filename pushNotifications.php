@@ -50,7 +50,7 @@ class pushNotifications {
 }
 
 if (!count(debug_backtrace())) {
-	$notifier = new pushNotfications()
+	$notifier = new pushNotfications();
 	$app_id = 'APP_ID';
 	$app_secret = 'APP_SECRET';
 	$accessToken = $app_id . '|' . $app_secret;
