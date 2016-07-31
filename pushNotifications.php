@@ -37,12 +37,12 @@ class pushNotifications {
 	*/
 	function sendPushNotification($userId, $accessToken, $notificationArray){
 		$facebook = $this->getFacebook();
-		$sent = true;
+		$sent = false;
 		try {
 			$sendNotification = $facebook->post('/' . $userId . '/notifications', $notificationArray, $accessToken);
+			$sent = true;
 		}catch(Facebook\Exceptions\FacebookAuthenticationException $e) {
 			print 'FacebookAuthenticationException' . $e->getMessage();
-			$sent = false;
 		}
 		return $sent;
 	}
